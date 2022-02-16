@@ -29,9 +29,10 @@ class Trexio < Formula
       {
         printf("%10s\\n", TREXIO_PACKAGE_VERSION);
 
-        trexio_exit_code rc;
+        trexio_exit_code rc = TREXIO_FAILURE;
+        trexio_t* test_file = NULL;
 
-        trexio_t* test_file = trexio_open("brew_test.dir", "w", TREXIO_TEXT, &rc);
+        test_file = trexio_open("brew_test.dir", 'w', TREXIO_TEXT, &rc);
         assert(test_file != NULL);
         assert(rc == TREXIO_SUCCESS);
 
