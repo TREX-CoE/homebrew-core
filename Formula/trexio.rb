@@ -12,6 +12,7 @@ class Trexio < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "gcc"  # needed for Fortran compiler
   depends_on "hdf5"
 
   def install
